@@ -21,23 +21,24 @@ let weather = {
       const { name } = data;
       const { timezone } = data;
       const timezoneInMinutes = timezone / 60;
-      const currTime = moment().utcOffset(timezoneInMinutes).format("h:mm A");
+      const currTime = moment().utcOffset(timezoneInMinutes).format('MMMM Do YYYY, h:mm:ss a');
       console.log("🚀 ~ file: app.js ~ line 25 ~ currTime", currTime)
       const { icon, description } = data.weather[0];
       const { temp, humidity } = data.main;
       const { speed } = data.wind;
-      document.querySelector(".city").innerText = "Weather in " + name;
+      document.querySelector(".city").innerText = name;
       document.querySelector(".icon").src =
         "https://openweathermap.org/img/wn/" + icon + ".png";
       document.querySelector(".description").innerText = description;
       document.querySelector(".temp").innerText = temp + "°C";
+      document.querySelector(".time").innerText = currTime;
       document.querySelector(".humidity").innerText =
         "Humidity: " + humidity + "%";
       document.querySelector(".wind").innerText =
         "Wind speed: " + speed + " km/h";
       document.querySelector(".weather").classList.remove("loading");
-      document.body.style.backgroundImage =
-        "url('https://source.unsplash.com/1600x900/?" + name + "')";
+    //   document.body.style.backgroundImage =
+    //     "url('https://source.unsplash.com/1600x900/?" + name + "')";
     },
     search: function () {
       this.fetchWeather(document.querySelector(".search-bar").value);
