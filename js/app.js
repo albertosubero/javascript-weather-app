@@ -21,7 +21,7 @@ let weather = {
       const { name } = data;
       const { timezone } = data;
       const timezoneInMinutes = timezone / 60;
-      const currTime = moment().utcOffset(timezoneInMinutes).format('MMMM Do YYYY, h:mm:ss a');
+      const currTime = moment().utcOffset(timezoneInMinutes).format('MMMM Do YYYY, h:mm a');
       console.log("🚀 ~ file: app.js ~ line 25 ~ currTime", currTime)
       const { icon, description } = data.weather[0];
       const { temp, humidity } = data.main;
@@ -38,7 +38,7 @@ let weather = {
         "Wind speed: " + speed + " km/h";
       document.querySelector(".weather").classList.remove("loading");
     //   document.body.style.backgroundImage =
-    //     "url('https://source.unsplash.com/1600x900/?" + name + "')";
+    //     "url('https://source.unsplash.com/1600x900/?sun?city')";
     },
     search: function () {
       this.fetchWeather(document.querySelector(".search-bar").value);

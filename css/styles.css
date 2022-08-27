@@ -6,17 +6,33 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     background: #222;
-    background-image: url('https://source.unsplash.com/1600x900/?landscape');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-size: 120%;
   }
   
+  .sunrise {
+    background-image: url('https://www.itl.cat/pngfile/big/28-285625_timeline-sunrise-cool.jpg');
+  }
+
+  .sunset {
+    background-image: url('https://www.itl.cat/pngfile/big/248-2488050_high-resolution-images-sunrise.jpg');
+  }
+
+  .night {
+    background-image: url('https://www.itl.cat/pngfile/big/3-36846_night-sky-above-the-clouds-wallpaper-night-sky.jpg');
+  }
+
+  .rain {
+    background-image: url('https://www.itl.cat/pngfile/big/258-2586529_photo-wallpaper-road-drops-rain-haze-rainy-day.jpg');
+  }
+
   .card {
-    background: #000000d0;
     color: white;
     padding: 2em;
-    border-radius: 30px;
     width: 100%;
-    max-width: 420px;
+    max-width: 768px;
     margin: 1em;
   }
   
@@ -33,7 +49,7 @@ body {
     height: 44px;
     width: 44px;
     outline: none;
-    background: #7c7c7c2b;
+    background: #0000002b;
     color: white;
     cursor: pointer;
     transition: 0.2s ease-in-out;
@@ -44,11 +60,15 @@ body {
     outline: none;
     padding: 0.4em 1em;
     border-radius: 24px;
-    background: #7c7c7c2b;
+    background: #0000002b;
     color: white;
     font-family: inherit;
     font-size: 105%;
     width: calc(100% - 100px);
+  }
+
+  ::placeholder {
+    color: white;
   }
   
   button:hover {
@@ -58,6 +78,19 @@ body {
   h1.temp {
     margin: 0;
     margin-bottom: 0.4em;
+    font-size: 4em;
+  }
+
+  h1.city {
+    font-size: 6em;
+    margin: 0;
+  }
+
+  p.time {
+    margin: 0;
+    padding-bottom: 1em;
+    border-bottom: 1px solid;
+    max-width: 50%;
   }
   
   .flex {
@@ -65,6 +98,13 @@ body {
     align-items: center;
   }
   
+  .weather-details-card {
+    background: #0000002b;
+    padding: 1em;
+    border-radius: 10px;
+    max-width: 50%;
+  }
+
   .description {
     text-transform: capitalize;
     margin-left: 8px;
